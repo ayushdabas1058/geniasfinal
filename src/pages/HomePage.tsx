@@ -16,7 +16,7 @@ const toppers = [
 const features = [
   { icon: <BookOpen size={24} />, title: "Comprehensive Notes", desc: "Subject-wise notes for Prelims & Mains covering the entire UPSC syllabus" },
   { icon: <Brain size={24} />, title: "Daily Mock Tests", desc: "Subject-wise MCQs with detailed explanations and performance tracking" },
-  { icon: <Newspaper size={24} />, title: "Current Affairs", desc: "Daily curated news with UPSC relevance analysis, updated every morning" },
+  { icon: <Newspaper size={24} />, title: "Our Achievers", desc: "Meet our UPSC toppers and their inspiring success stories" },
   { icon: <LayoutDashboard size={24} />, title: "Progress Dashboard", desc: "Track your preparation with detailed analytics and study streaks" },
 ];
 
@@ -266,7 +266,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             <div>
               <h3 className="font-bold mb-4 text-[#D4AF37]">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                {["Home", "Study Material", "Quiz", "Current Affairs", "Dashboard"].map(l => (
+                {["Home", "Study Material", "Quiz", "Achievers", "Dashboard"].map(l => (
                   <li key={l}><a href="#" className="hover:text-[#D4AF37] transition-colors">{l}</a></li>
                 ))}
               </ul>
@@ -274,7 +274,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             <div>
               <h3 className="font-bold mb-4 text-[#D4AF37]">Resources</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                {["Current Affairs", "Free Notes", "Test Series", "Previous Papers", "Our Results"].map(l => (
+                {["Achievers", "Free Notes", "Test Series", "Previous Papers", "Our Results"].map(l => (
                   <li key={l}><a href="#" className="hover:text-[#D4AF37] transition-colors">{l}</a></li>
                 ))}
               </ul>
