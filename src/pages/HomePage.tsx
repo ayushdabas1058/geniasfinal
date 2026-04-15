@@ -1,4 +1,4 @@
-import { ChevronRight, Download, Star, Quote, BookOpen, Brain, Newspaper, LayoutDashboard, Users, Award, TrendingUp, Clock, Phone, Mail, MapPin } from "lucide-react";
+import { ChevronRight, Download, Star, Quote, BookOpen, LayoutDashboard, Users, Award, TrendingUp, Clock, Phone, Mail, MapPin } from "lucide-react";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import PageHead from "@/components/PageHead";
 
@@ -15,8 +15,7 @@ const toppers = [
 
 const features = [
   { icon: <BookOpen size={24} />, title: "Comprehensive Notes", desc: "Subject-wise notes for Prelims & Mains covering the entire UPSC syllabus" },
-  { icon: <Brain size={24} />, title: "Daily Mock Tests", desc: "Subject-wise MCQs with detailed explanations and performance tracking" },
-  { icon: <Newspaper size={24} />, title: "Our Achievers", desc: "Meet our UPSC toppers and their inspiring success stories" },
+  { icon: <Award size={24} />, title: "Our Achievers", desc: "Meet our UPSC toppers and their inspiring success stories" },
   { icon: <LayoutDashboard size={24} />, title: "Progress Dashboard", desc: "Track your preparation with detailed analytics and study streaks" },
 ];
 
@@ -266,7 +265,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             <div>
               <h3 className="font-bold mb-4 text-[#D4AF37]">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                {["Home", "Study Material", "Quiz", "Achievers", "Dashboard"].map(l => (
+                {["Home", "Study Material", "Achievers", "Dashboard"].map(l => (
                   <li key={l}><a href="#" className="hover:text-[#D4AF37] transition-colors">{l}</a></li>
                 ))}
               </ul>
