@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation, Link } from "react-router-dom";
-import { BookOpen, Brain, LayoutDashboard, Menu, X, Home, LogOut, GraduationCap, Trophy, Award } from "lucide-react";
+import { BookOpen, LayoutDashboard, Menu, X, Home, LogOut, GraduationCap, Trophy, Award } from "lucide-react";
 import { supabase } from "./lib/supabase";
 import type { User } from "@supabase/supabase-js";
 
 import HomePage from "./pages/HomePage";
-import QuizPage from "./pages/QuizPage";
+
 import StudyMaterialPage from "./pages/StudyMaterialPage";
 import AchieversPage from "./pages/AchieversPage";
 import DashboardPage from "./pages/DashboardPage";
@@ -22,7 +22,6 @@ const navLinks = [
   { to: "/courses",       label: "Courses",         icon: <GraduationCap size={16} /> },
   { to: "/results",       label: "Results",         icon: <Trophy size={16} /> },
   { to: "/study",         label: "Study Material",  icon: <BookOpen size={16} /> },
-  { to: "/quiz",          label: "Quiz",            icon: <Brain size={16} /> },
   { to: "/achievers",     label: "Achievers",       icon: <Award size={16} /> },
   { to: "/dashboard",     label: "Dashboard",       icon: <LayoutDashboard size={16} /> },
   { to: "/get-started",   label: "Get Started",     icon: <GraduationCap size={16} /> },
@@ -200,7 +199,7 @@ export default function App() {
           <Route path="/auth" element={<AuthPage onSuccess={handleAuthSuccess} />} />
           <Route path="/policy" element={<PolicyPage />} />
           <Route path="/study" element={<ProtectedRoute user={user}><StudyMaterialPage /></ProtectedRoute>} />
-          <Route path="/quiz" element={<ProtectedRoute user={user}><QuizPage /></ProtectedRoute>} />
+          
           <Route path="/dashboard" element={<ProtectedRoute user={user}><DashboardPage /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
