@@ -34,6 +34,9 @@ export default function App() {
   const [authLoading, setAuthLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}, [location.pathname]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
