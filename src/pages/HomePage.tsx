@@ -49,7 +49,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
                 <span className="text-[#D4AF37] text-sm font-medium">India's Most Trusted UPSC Platform</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Crack UPSC with<br />
+                Dominate Economics Optional with<br />
                 <span className="text-[#D4AF37]">Genuine IAS</span>
               </h1>
               <p className="text-gray-300 text-lg mb-10 leading-relaxed">
