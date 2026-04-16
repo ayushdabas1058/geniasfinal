@@ -121,7 +121,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
       <section className="py-20 bg-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold mb-4">Everything You Need to <span className="text-[#D4AF37]">Crack UPSC</span></h2>
+            <h2 className="text-4xl font-bold mb-4">Everything You Need to <span className="text-[#D4AF37]">Crack Economics Optional</span></h2>
             <p className="text-gray-400 text-lg">A complete ecosystem for your IAS preparation</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
