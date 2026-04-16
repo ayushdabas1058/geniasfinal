@@ -52,9 +52,11 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
                 Dominate Economics Optional with<br />
                 <span className="text-[#D4AF37]">Genuine IAS</span>
               </h1>
-              <p className="text-gray-300 text-lg mb-10 leading-relaxed">
-                A genuine economics optional teacher is hard to find, Difficult to part with, And Impossible to forget.
-              </p>
+              <p className="text-lg mb-10 leading-tight max-w-md">
+              <span className="block text-gray-400">Hard to find.</span>
+              <span className="block text-gray-300">Harder to leave.</span>
+              <span className="block text-[#D4AF37] font-semibold">Impossible to forget.</span>
+</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button onClick={() => onNavigate?.("/courses")} className="bg-[#D4AF37] text-[#0F172A] px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#C4A037] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 group">
                   Start Preparation <ChevronRight className="group-hover:translate-x-1 transition-transform" size={22} />
