@@ -77,10 +77,10 @@ const achievers = [
 ];
 
 const stats = [
-  { label: "Top 500 Selections", value: "9+", color: "#D4AF37" },
+  { label: "Top 500 Selections", value: "8+", color: "#D4AF37" },
   { label: "Best Rank Achieved", value: "AIR 4", color: "#10B981" },
   { label: "Years of Excellence", value: "2024-25", color: "#3B82F6" },
-  { label: "Students Mentored", value: "1000+", color: "#8B5CF6" },
+  { label: "Students Mentored", value: "250+", color: "#8B5CF6" },
 ];
 
 export default function AchieversPage() {
