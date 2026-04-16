@@ -1,13 +1,15 @@
 import { Award, Star, TrendingUp, Quote } from "lucide-react";
 import PageHead from "@/components/PageHead";
 
-const achievers = [
+
+    const achievers = [
   {
     air: 4,
     name: "Raghav Jhunjhunwala",
     year: 2025,
     optional: "Economics",
     attempts: "3rd",
+    course: "Mains Guidance Program",
     img: "/toppers/raghav.jpg",
     quote: "The structured mentorship and daily current affairs analysis made all the difference in my preparation. Genuine IAS is truly the best platform for serious UPSC aspirants.",
   },
@@ -17,6 +19,7 @@ const achievers = [
     year: 2024,
     optional: "Economics",
     attempts: "1st",
+    course: "Foundation + Mains Guidance Program",
     img: "/toppers/aastha.jpg",
     quote: "Genuine IAS gave me the right direction and strategy to crack UPSC in my first attempt. The faculty's personalized attention was exceptional.",
   },
@@ -26,6 +29,7 @@ const achievers = [
     year: 2024,
     optional: "Economics",
     attempts: "2nd",
+    course: "Foundation + Mains Guidance Program",
     img: "/toppers/aditi.jpg",
     quote: "The faculty's expertise and personalized feedback transformed my preparation completely. I owe my success to Genuine IAS.",
   },
@@ -35,6 +39,7 @@ const achievers = [
     year: 2025,
     optional: "Economics",
     attempts: "2nd",
+    course: "Mains Guidance Program",
     img: "/toppers/dhwanish.jpg",
     quote: "Comprehensive study material and excellent test series helped me work on my weak areas effectively.",
   },
@@ -44,6 +49,7 @@ const achievers = [
     year: 2025,
     optional: "Economics",
     attempts: "2nd",
+    course: "Mains Guidance Program",
     img: "/toppers/daisy.jpg",
     quote: "The current affairs integration with static subjects is what sets Genuine IAS apart from every other coaching.",
   },
@@ -53,6 +59,7 @@ const achievers = [
     year: 2025,
     optional: "Economics",
     attempts: "2nd",
+    course: "Mains Guidance Program",
     img: "/toppers/tanya.jpg",
     quote: "Answer writing practice and detailed feedback from faculty was a game changer for mains preparation.",
   },
@@ -62,6 +69,7 @@ const achievers = [
     year: 2025,
     optional: "Economics",
     attempts: "2nd",
+    course: "Foundation + Mains Guidance Program",
     img: "/toppers/nitish.jpg",
     quote: "The test series and performance tracking helped me identify and improve my weak areas systematically.",
   },
@@ -71,6 +79,7 @@ const achievers = [
     year: 2024,
     optional: "Economics",
     attempts: "6th",
+    course: "Foundation + Mains Guidance Program",
     img: "/toppers/tanishi.jpg",
     quote: "Genuine IAS gave me the confidence and strategy I needed to succeed in UPSC. Forever grateful.",
   },
