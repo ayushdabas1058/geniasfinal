@@ -2,7 +2,7 @@ import { Trophy, Star, TrendingUp } from "lucide-react";
 import PageHead from "@/components/PageHead";
 
 const stats = [
-  { label: "Top 500 Rankers", value: "9+", icon: <Trophy size={24} /> },
+  { label: "Top 500 Rankers", value: "8+", icon: <Trophy size={24} /> },
   { label: "Consecutive Years", value: "2", icon: <TrendingUp size={24} /> },
   { label: "Best Rank", value: "AIR 4", icon: <Star size={24} /> },
 ];
