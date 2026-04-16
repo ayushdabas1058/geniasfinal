@@ -181,6 +181,9 @@ export default function AchieversPage() {
               <p className="text-[#CBD5E1] text-sm italic leading-relaxed">
                 "{a.quote}"
               </p>
+              <span className="inline-block mt-3 px-3 py-1 text-xs rounded-full bg-[#1E293B] text-[#D4AF37] border border-[#D4AF37]/30">
+  {a.course}
+</span>
             </div>
           ))}
         </div>
