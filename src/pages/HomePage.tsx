@@ -53,7 +53,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
                 <span className="text-[#D4AF37]">Genuine IAS</span>
               </h1>
               <p className="text-gray-300 text-lg mb-10 leading-relaxed">
-                Join thousands of students who transformed their dreams into reality. Proven track record with AIR 4, 61, 91 and many more top rankers every year.
+                A genuine economics optional teacher is hard to find,Difficult to part with, And Impossible to forget.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button onClick={() => onNavigate?.("/courses")} className="bg-[#D4AF37] text-[#0F172A] px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#C4A037] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 group">
@@ -99,7 +99,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Users size={28} />,     value: "1000+",  label: "Students Mentored", color: "#3B82F6" },
+              { icon: <Users size={28} />,     value: "250+",  label: "Students Mentored", color: "#3B82F6" },
               { icon: <Award size={28} />,     value: "9+",     label: "Top 500 Rankers",   color: "#10B981" },
               { icon: <TrendingUp size={28} />,value: "AIR 4",  label: "Best Rank — 2025",  color: "#D4AF37" },
               { icon: <Clock size={28} />,     value: "2024-25",label: "Proven Results",    color: "#8B5CF6" },
