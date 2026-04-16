@@ -172,7 +172,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
           <div className="flex justify-center">
             {faculty.map((f) => (
               <div key={f.name} className="bg-[#1E293B] border border-[#334155] rounded-2xl p-10 text-center lg:hover:border-[#D4AF37]/40 lg:hover:-translate-y-1 transition-all duration-300 max-w-sm w-full">
-                <div className="text-7xl mb-5">{f.emoji}</div>
+           <img src="/rohit.jpg" alt={f.name} className="w-28 h-28 rounded-full object-cover object-top border-3 border-[#D4AF37] mx-auto mb-3" />
                 <h3 className="font-bold text-white text-2xl mb-3">{f.name}</h3>
                 <span className="inline-block bg-[#D4AF37] text-[#0F172A] text-sm font-bold px-4 py-1.5 rounded-full mb-4">{f.subject}</span>
                 <p className="text-gray-400 text-sm mb-2">{f.exp}</p>

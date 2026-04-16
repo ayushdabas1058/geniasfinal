@@ -1,4 +1,4 @@
-import { Award, Star, TrendingUp, Calendar } from "lucide-react";
+import { Award, Star, TrendingUp, Quote } from "lucide-react";
 import PageHead from "@/components/PageHead";
 
 const achievers = [
@@ -8,8 +8,8 @@ const achievers = [
     year: 2025,
     optional: "Economics",
     attempts: "2nd",
+    img: "/toppers/raghav.jpg",
     quote: "The structured mentorship and daily current affairs analysis made all the difference in my preparation. Genuine IAS is truly the best platform for serious UPSC aspirants.",
-    emoji: "👨‍🎓",
   },
   {
     air: 61,
@@ -17,8 +17,8 @@ const achievers = [
     year: 2024,
     optional: "Sociology",
     attempts: "1st",
+    img: "/toppers/aastha.jpg",
     quote: "Genuine IAS gave me the right direction and strategy to crack UPSC in my first attempt. The faculty's personalized attention was exceptional.",
-    emoji: "👩‍🎓",
   },
   {
     air: 91,
@@ -26,17 +26,17 @@ const achievers = [
     year: 2024,
     optional: "Political Science",
     attempts: "2nd",
+    img: "/toppers/aditi.jpg",
     quote: "The faculty's expertise and personalized feedback transformed my preparation completely. I owe my success to Genuine IAS.",
-    emoji: "👩‍🎓",
   },
   {
     air: 108,
-    name: "Dhwanihs",
+    name: "Dhwanish",
     year: 2025,
     optional: "Geography",
     attempts: "2nd",
+    img: "/toppers/dhwanish.jpg",
     quote: "Comprehensive study material and excellent test series helped me work on my weak areas effectively.",
-    emoji: "👩‍🎓",
   },
   {
     air: 183,
@@ -44,8 +44,8 @@ const achievers = [
     year: 2025,
     optional: "Anthropology",
     attempts: "3rd",
+    img: "/toppers/daisy.jpg",
     quote: "The current affairs integration with static subjects is what sets Genuine IAS apart from every other coaching.",
-    emoji: "👩‍🎓",
   },
   {
     air: 200,
@@ -53,8 +53,8 @@ const achievers = [
     year: 2025,
     optional: "Public Administration",
     attempts: "2nd",
+    img: "/toppers/tanya.jpg",
     quote: "Answer writing practice and detailed feedback from faculty was a game changer for mains preparation.",
-    emoji: "👩‍🎓",
   },
   {
     air: 237,
@@ -62,8 +62,8 @@ const achievers = [
     year: 2025,
     optional: "History",
     attempts: "3rd",
+    img: "/toppers/nitish.jpg",
     quote: "The test series and performance tracking helped me identify and improve my weak areas systematically.",
-    emoji: "👨‍🎓",
   },
   {
     air: 386,
@@ -71,8 +71,8 @@ const achievers = [
     year: 2024,
     optional: "Sociology",
     attempts: "2nd",
+    img: "/toppers/tanishi.jpg",
     quote: "Genuine IAS gave me the confidence and strategy I needed to succeed in UPSC. Forever grateful.",
-    emoji: "👩‍🎓",
   },
 ];
 
@@ -122,6 +122,22 @@ export default function AchieversPage() {
           ))}
         </div>
 
+        {/* Director Message Banner */}
+        <div className="bg-[#1E293B] border border-[#D4AF37]/30 rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center gap-6">
+          <img
+            src="/rohit.jpg"
+            alt="Rohit Sehrawat"
+            className="w-20 h-20 rounded-full object-cover object-top border-2 border-[#D4AF37] flex-shrink-0"
+          />
+          <div>
+            <h3 className="text-white font-bold text-lg mb-1">Message from the Director</h3>
+            <p className="text-[#94A3B8] text-sm leading-relaxed italic">
+              "Every achiever on this page started exactly where you are today. At Genuine IAS, we don't just teach — we mentor, guide, and walk with you every step of the way. Your name could be next on this list."
+            </p>
+            <p className="text-[#D4AF37] text-sm font-semibold mt-2">— Rohit Sehrawat, Founder & Director</p>
+          </div>
+        </div>
+
         {/* Achiever Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievers.map((a) => (
@@ -130,9 +146,16 @@ export default function AchieversPage() {
               className="bg-[#1E293B] border border-[#334155] rounded-2xl p-6 hover:border-[#D4AF37]/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex-shrink-0 flex flex-col items-center justify-center">
-                  <span className="text-[#0F172A] text-[10px] font-bold leading-none">AIR</span>
-                  <span className="text-[#0F172A] text-xl font-bold leading-none">{a.air}</span>
+                <div className="relative flex-shrink-0">
+                  <img
+                    src={a.img}
+                    alt={a.name}
+                    className="w-16 h-16 rounded-full object-cover object-top border-2 border-[#D4AF37]"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  />
+                  <span className="absolute -bottom-1 -left-1 bg-[#D4AF37] text-[#0F172A] text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                    AIR {a.air}
+                  </span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-white font-bold text-lg leading-snug">{a.name}</h3>
