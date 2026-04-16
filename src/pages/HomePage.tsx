@@ -1,3 +1,4 @@
+import React from "react";
 import { ChevronRight, Download, Star, Quote, BookOpen, LayoutDashboard, Users, Award, TrendingUp, Clock, Phone, Mail, MapPin } from "lucide-react";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import PageHead from "@/components/PageHead";
@@ -28,6 +29,31 @@ const testimonials = [
   { name: "Aastha Singh",         air: 61,  year: 2024, img: "/toppers/aastha.jpg", stars: 5, quote: "Genuine IAS gave me the right direction and strategy to crack UPSC. The faculty's personalized attention and comprehensive study material were exceptional." },
   { name: "Daisy Chhabra",        air: 183, year: 2025, img: "/toppers/daisy.jpg", stars: 5, quote: "What sets Genuine IAS apart is their focus on integrating current affairs with static subjects. The answer writing program transformed my mains preparation completely." },
 ];
+function RohitBio() {
+  const [expanded, setExpanded] = React.useState(false);
+  const short = "Rohit Sehrawat Sir has worked as an Assistant Professor of Economics in Delhi University and served as an Economic Consultant in the Ministry of Finance.";
+  const full = `Rohit Sehrawat Sir has worked as an Assistant Professor of Economics in Delhi University. He has also served as an Economic Consultant in the Ministry of Finance and has written multiple research papers. With a dream of making Economics Optional the most popular optional, he left his job in 2022 and founded Genuine IAS to cater to the needs of Economics Optional students.
+
+In recent years, the landscape of Economics Optional preparation has witnessed a significant transformation, largely driven by his dedicated efforts. Known for his clear conceptual approach and student-centric teaching methodology, he has emerged as a prominent faculty guiding aspirants through the complexities of the subject.
+
+Rohit Sir's emphasis on strengthening foundational understanding and providing well-structured, exam-oriented study material has played a crucial role in reshaping how students perceive Economics Optional. His approach goes beyond rote learning, focusing instead on analytical clarity and application.
+
+As a result of these consistent efforts, the popularity of Economics Optional is rapidly increasing among aspirants — recognizing its potential as a scoring and intellectually rewarding subject. With continuous refinement of study resources under Rohit Sir's guidance, Economics Optional is well on its way to becoming one of the most preferred choices in the coming years.`;
+
+  return (
+    <div className="text-left mt-2">
+      <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
+        {expanded ? full : short}
+      </p>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-3 flex items-center gap-1 text-[#D4AF37] text-sm font-semibold hover:underline transition-all"
+      >
+        {expanded ? "Show less ▲" : "Read more ▼"}
+      </button>
+    </div>
+  );
+}
 
 export default function HomePage({ onNavigate }: { onNavigate?: (page: string) => void }) {
   const scrollToToppers = () => {
@@ -182,8 +208,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
            <img src="/rohit.jpg" alt={f.name} className="w-28 h-28 rounded-full object-cover object-top border-3 border-[#D4AF37] mx-auto mb-3" />
                 <h3 className="font-bold text-white text-2xl mb-3">{f.name}</h3>
                 <span className="inline-block bg-[#D4AF37] text-[#0F172A] text-sm font-bold px-4 py-1.5 rounded-full mb-4">{f.subject}</span>
-                <p className="text-gray-400 text-sm mb-2">{f.exp}</p>
-                <p className="text-gray-500 text-xs">{f.qual}</p>
+                <RohitBio />
                 <div className="mt-6 pt-6 border-t border-[#334155] flex flex-col gap-2">
                   <a href="tel:8920867614" className="flex items-center justify-center gap-2 text-[#D4AF37] text-sm hover:underline">
                     <Phone size={14} /> +91 8920867614
