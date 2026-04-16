@@ -3,14 +3,14 @@ import VideoTestimonials from "@/components/VideoTestimonials";
 import PageHead from "@/components/PageHead";
 
 const toppers = [
-  { air: 4,   name: "Raghav Jhunjhunwala", year: 2025, quote: "The structured mentorship and daily current affairs analysis made all the difference.", emoji: "👨‍🎓" },
-  { air: 61,  name: "Aastha Singh",         year: 2024, quote: "Genuine IAS gave me the right direction and strategy to crack UPSC in my first attempt.", emoji: "👩‍🎓" },
-  { air: 91,  name: "Aditi Chapparia",      year: 2024, quote: "The faculty's expertise and personalized feedback transformed my preparation completely.", emoji: "👩‍🎓" },
-  { air: 108, name: "Dhwanihs",             year: 2025, quote: "Comprehensive study material and excellent test series helped me work on my weak areas.", emoji: "👩‍🎓" },
-  { air: 183, name: "Daisy Chhabra",        year: 2025, quote: "The current affairs integration with static subjects is what sets Genuine IAS apart.", emoji: "👩‍🎓" },
-  { air: 200, name: "Tanya Singh",          year: 2025, quote: "Answer writing practice and detailed feedback from faculty was a game changer for mains.", emoji: "👩‍🎓" },
-  { air: 237, name: "Nitish Kumar",         year: 2025, quote: "The test series and performance tracking helped me identify and improve my weak areas.", emoji: "👨‍🎓" },
-  { air: 386, name: "Tanishi",              year: 2024, quote: "Genuine IAS gave me the confidence and strategy I needed to succeed in UPSC.", emoji: "👩‍🎓" },
+  { air: 4,   name: "Raghav Jhunjhunwala", year: 2025, img: "/toppers/raghav.jpg", quote: "The structured mentorship and daily current affairs analysis made all the difference." },
+  { air: 61,  name: "Aastha Singh",         year: 2024, img: "/toppers/aastha.jpg", quote: "Genuine IAS gave me the right direction and strategy to crack UPSC in my first attempt." },
+  { air: 91,  name: "Aditi Chapparia",      year: 2024, img: "/toppers/aditi.jpg", quote: "The faculty's expertise and personalized feedback transformed my preparation completely." },
+  { air: 108, name: "Dhwanish",             year: 2025, img: "/toppers/dhwanish.jpg", quote: "Comprehensive study material and excellent test series helped me work on my weak areas." },
+  { air: 183, name: "Daisy Chhabra",        year: 2025, img: "/toppers/daisy.jpg", quote: "The current affairs integration with static subjects is what sets Genuine IAS apart." },
+  { air: 200, name: "Tanya Singh",          year: 2025, img: "/toppers/tanya.jpg", quote: "Answer writing practice and detailed feedback from faculty was a game changer for mains." },
+  { air: 237, name: "Nitish Kumar Yadav",   year: 2025, img: "/toppers/nitish.jpg", quote: "The test series and performance tracking helped me identify and improve my weak areas." },
+  { air: 386, name: "Tanishi Kalra",        year: 2024, img: "/toppers/tanishi.jpg", quote: "Genuine IAS gave me the confidence and strategy I needed to succeed in UPSC." },
 ];
 
 const features = [
@@ -24,9 +24,9 @@ const faculty = [
 ];
 
 const testimonials = [
-  { name: "Raghav Jhunjhunwala", air: 4,   year: 2025, emoji: "👨‍🎓", stars: 5, quote: "The structured mentorship and daily current affairs analysis made all the difference in my preparation. Genuine IAS is truly the best platform for serious UPSC aspirants." },
-  { name: "Aastha Singh",         air: 61,  year: 2024, emoji: "👩‍🎓", stars: 5, quote: "Genuine IAS gave me the right direction and strategy to crack UPSC. The faculty's personalized attention and comprehensive study material were exceptional." },
-  { name: "Daisy Chhabra",        air: 183, year: 2025, emoji: "👩‍🎓", stars: 5, quote: "What sets Genuine IAS apart is their focus on integrating current affairs with static subjects. The answer writing program transformed my mains preparation completely." },
+  { name: "Raghav Jhunjhunwala", air: 4,   year: 2025, img: "/toppers/raghav.jpg", stars: 5, quote: "The structured mentorship and daily current affairs analysis made all the difference in my preparation. Genuine IAS is truly the best platform for serious UPSC aspirants." },
+  { name: "Aastha Singh",         air: 61,  year: 2024, img: "/toppers/aastha.jpg", stars: 5, quote: "Genuine IAS gave me the right direction and strategy to crack UPSC. The faculty's personalized attention and comprehensive study material were exceptional." },
+  { name: "Daisy Chhabra",        air: 183, year: 2025, img: "/toppers/daisy.jpg", stars: 5, quote: "What sets Genuine IAS apart is their focus on integrating current affairs with static subjects. The answer writing program transformed my mains preparation completely." },
 ];
 
 export default function HomePage({ onNavigate }: { onNavigate?: (page: string) => void }) {
@@ -77,18 +77,15 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             {/* Floating topper cards — stacked cleanly */}
             <div className="hidden md:flex flex-col gap-4 items-end">
               {[
-                { air: 4,   name: "Raghav Jhunjhunwala", year: 2025 },
-                { air: 61,  name: "Aastha Singh",         year: 2024 },
-                { air: 91,  name: "Aditi Chapparia",      year: 2024 },
+                { air: 4,   name: "Raghav Jhunjhunwala", year: 2025, img: "/toppers/raghav.jpg" },
+                { air: 61,  name: "Aastha Singh",         year: 2024, img: "/toppers/aastha.jpg" },
+                { air: 91,  name: "Aditi Chapparia",      year: 2024, img: "/toppers/aditi.jpg" },
               ].map((t) => (
                 <div key={t.air} onClick={scrollToToppers} className="bg-white text-[#0F172A] px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-4 w-72 lg:hover:scale-105 lg:hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                  <div className="w-14 h-14 bg-[#D4AF37] rounded-full flex-shrink-0 flex flex-col items-center justify-center">
-                    <span className="text-[#0F172A] text-xs font-bold leading-none">AIR</span>
-                    <span className="text-[#0F172A] text-lg font-bold leading-none">{t.air}</span>
-                  </div>
+                  <img src={t.img} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] flex-shrink-0" />
                   <div>
                     <p className="font-bold text-base">{t.name}</p>
-                    <p className="text-gray-400 text-xs">UPSC CSE {t.year}</p>
+                    <p className="text-[#D4AF37] text-xs font-semibold">AIR {t.air} — UPSC CSE {t.year}</p>
                   </div>
                 </div>
               ))}
@@ -151,11 +148,8 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {toppers.map((t) => (
               <div key={`${t.air}-${t.year}`} className="bg-[#1E293B] border border-[#334155] rounded-2xl p-6 text-center lg:hover:border-[#D4AF37]/50 lg:hover:-translate-y-2 lg:hover:shadow-xl transition-all duration-300" onClick={scrollToToppers}>
-                <div className="w-20 h-20 bg-[#D4AF37] rounded-full mx-auto mb-2 flex flex-col items-center justify-center">
-                  <span className="text-[#0F172A] text-xs font-bold leading-none">AIR</span>
-                  <span className="text-[#0F172A] text-2xl font-bold leading-none">{t.air}</span>
-                </div>
-                <div className="text-4xl my-3">{t.emoji}</div>
+                <img src={t.img} alt={t.name} className="w-20 h-20 rounded-full object-cover object-top border-2 border-[#D4AF37] mx-auto mb-2" />
+                <div className="text-[#D4AF37] font-bold text-sm my-3">AIR {t.air}</div>
                 <p className="font-bold text-white text-base mb-1">{t.name}</p>
                 <p className="text-[#D4AF37] text-xs font-semibold mb-3">UPSC CSE {t.year}</p>
                 <p className="text-gray-400 text-xs italic leading-relaxed">"{t.quote}"</p>
@@ -218,7 +212,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
                 </div>
                 <p className="text-gray-300 italic leading-relaxed mb-6 text-sm">"{t.quote}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-[#334155]">
-                  <span className="text-3xl">{t.emoji}</span>
+                  <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full object-cover object-top border-2 border-[#D4AF37]" />
                   <div>
                     <p className="font-bold text-white">{t.name}</p>
                     <p className="text-[#D4AF37] text-sm font-semibold">AIR {t.air} — UPSC CSE {t.year}</p>

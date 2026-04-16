@@ -8,35 +8,33 @@ const stats = [
 ];
 
 const results2025 = [
-  { air: 4, name: "Raghav Jhunjhunwala", emoji: "🎓" },
-  { air: 108, name: "Dhwanihs", emoji: "🌟" },
-  { air: 183, name: "Daisy Chhabra", emoji: "💫" },
-  { air: 200, name: "Tanya Singh", emoji: "✨" },
-  { air: 237, name: "Nitish Kumar", emoji: "🏅" },
+  { air: 4,   name: "Raghav Jhunjhunwala", img: "/toppers/raghav.jpg" },
+  { air: 108, name: "Dhwanish",            img: "/toppers/dhwanish.jpg" },
+  { air: 183, name: "Daisy Chhabra",       img: "/toppers/daisy.jpg" },
+  { air: 200, name: "Tanya Singh",         img: "/toppers/tanya.jpg" },
+  { air: 237, name: "Nitish Kumar Yadav",  img: "/toppers/nitish.jpg" },
 ];
 
 const results2024 = [
-  { air: 61, name: "Aastha Singh", emoji: "🎓" },
-  { air: 91, name: "Aditi Chapparia", emoji: "🌟" },
-  { air: 386, name: "Tanishi", emoji: "💫" },
-  { air: 423, name: "Daisy", emoji: "✨" },
-  { air: 723, name: "Nitish Kumar", emoji: "🏅" },
+  { air: 61,  name: "Aastha Singh",       img: "/toppers/aastha.jpg" },
+  { air: 91,  name: "Aditi Chapparia",    img: "/toppers/aditi.jpg" },
+  { air: 386, name: "Tanishi Kalra",      img: "/toppers/tanishi.jpg" },
+  { air: 422, name: "Daisy Chhabra",      img: "/toppers/daisy.jpg" },
+  { air: 723, name: "Nitish Kumar Yadav", img: "/toppers/nitish.jpg" },
 ];
 
 interface ResultCardProps {
   air: number;
   name: string;
-  emoji: string;
+  img: string;
   year: number;
 }
 
-function ResultCard({ air, name, emoji, year }: ResultCardProps) {
+function ResultCard({ air, name, img, year }: ResultCardProps) {
   return (
     <div className="bg-[#1E293B] border border-[#D4AF37]/30 rounded-2xl p-6 flex flex-col items-center gap-3 hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300">
-      <div className="w-20 h-20 rounded-full bg-[#D4AF37]/10 border-2 border-[#D4AF37] flex items-center justify-center">
-        <span className="text-[#D4AF37] font-bold text-xl">AIR {air}</span>
-      </div>
-      <span className="text-3xl">{emoji}</span>
+      <img src={img} alt={name} className="w-24 h-24 rounded-full object-cover object-top border-2 border-[#D4AF37]" onError={(e) => { e.currentTarget.style.display='none'; }} />
+      <span className="text-[#D4AF37] font-bold text-sm">AIR {air}</span>
       <h3 className="text-white font-semibold text-lg text-center">{name}</h3>
       <span className="text-[#94A3B8] text-sm">UPSC CSE {year}</span>
     </div>
@@ -57,7 +55,7 @@ function YearSection({ year, results }: { year: number; results: typeof results2
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {results.map((r) => (
-            <ResultCard key={r.name + year} air={r.air} name={r.name} emoji={r.emoji} year={year} />
+            <ResultCard key={r.name + year} air={r.air} name={r.name} img={r.img} year={year} />
           ))}
         </div>
       </div>
