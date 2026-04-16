@@ -92,13 +92,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
             <Link to="/" className="flex items-center gap-2 sm:gap-2.5 hover:opacity-90 transition-opacity">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-[#0F172A] font-bold text-lg sm:text-xl">G</span>
-              </div>
-              <span className="text-white font-bold text-lg sm:text-xl tracking-tight">
-                Genuine <span className="text-[#D4AF37]">IAS</span>
-              </span>
-            </Link>
+  <img src="/logo.png" alt="Genuine IAS" className="h-10 sm:h-12 w-auto object-contain" />
+</Link>
 
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
