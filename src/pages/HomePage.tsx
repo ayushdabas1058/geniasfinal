@@ -264,7 +264,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             Join the Genuine IAS family and get the mentorship, strategy and study material that produced AIR 4, 61, 91 and hundreds of selections.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <button onClick={() => onNavigate?.("/courses")} className="bg-[#0F172A] text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#1E293B] hover:-translate-y-1 transition-all group">
+             <button onClick={() => { onNavigate?.("/courses"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="bg-[#0F172A] text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#1E293B] hover:-translate-y-1 transition-all group">
                Enroll Now <ChevronRight className="group-hover:translate-x-1 transition-transform" size={22} />
              </button>
             <a href="tel:+918920867614" className="border-2 border-[#0F172A] text-[#0F172A] px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#0F172A] hover:text-white hover:-translate-y-1 transition-all">
