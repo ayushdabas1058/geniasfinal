@@ -134,6 +134,26 @@ export default function GetStartedPage() {
         </div>
       </section>
 
+      {/* Trust / Director Section */}
+      <section className="py-16 bg-[#0F172A] border-t border-[#334155]">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-[#1E293B] border border-[#D4AF37]/30 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
+            <img
+              src="/rohit.jpg"
+              alt="Rohit Sehrawat"
+              className="w-24 h-24 rounded-full object-cover object-top border-2 border-[#D4AF37] flex-shrink-0"
+            />
+            <div className="text-center sm:text-left">
+              <p className="text-[#94A3B8] text-sm italic leading-relaxed mb-3">
+                "We built Genuine IAS with one mission — to give every serious UPSC aspirant the same quality mentorship that produces top ranks. Your success is our reputation."
+              </p>
+              <p className="text-[#D4AF37] font-bold text-sm">Rohit Sehrawat</p>
+              <p className="text-[#94A3B8] text-xs">Founder & Director, Genuine IAS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WhatsApp Help */}
       <section className="py-16 bg-[#0F172A] border-t border-[#334155]">
         <div className="max-w-3xl mx-auto px-4 text-center">
