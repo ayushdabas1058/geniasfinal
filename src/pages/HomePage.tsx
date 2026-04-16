@@ -75,7 +75,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
             </div>
 
             {/* Floating topper cards — stacked cleanly */}
-            <div className="hidden md:flex flex-col gap-4 items-end">
+            <div className="hidden md:grid grid-cols-2 gap-4">
               {[
                 { air: 4,   name: "Raghav Jhunjhunwala", year: 2025, img: "/toppers/raghav.jpg" },
                 { air: 61,  name: "Aastha Singh",         year: 2024, img: "/toppers/aastha.jpg" },
