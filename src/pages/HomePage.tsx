@@ -84,7 +84,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
               <span className="block text-[#D4AF37] font-semibold">Impossible to forget.</span>
 </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => onNavigate?.("/courses")} className="bg-[#D4AF37] text-[#0F172A] px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#C4A037] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 group">
+                <button onClick={() => { onNavigate?.("/courses"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="bg-[#D4AF37] text-[#0F172A] px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#C4A037] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 group">
                   Start Preparation <ChevronRight className="group-hover:translate-x-1 transition-transform" size={22} />
                 </button>
                 <button onClick={() => onNavigate?.("/study")} className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-[#D4AF37] hover:text-[#0F172A] hover:-translate-y-1 transition-all duration-300">
