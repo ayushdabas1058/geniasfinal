@@ -84,7 +84,7 @@ export default function HomePage({ onNavigate }: { onNavigate?: (page: string) =
                 { air: 183, name: "Daisy Chhabra",        year: 2025, img: "/toppers/daisy.jpg" },
                 { air: 200, name: "Tanya Singh",          year: 2025, img: "/toppers/tanya.jpg" },
               ].map((t) => (
-                <div key={t.air} onClick={scrollToToppers} className="bg-white text-[#0F172A] px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-4 w-72 lg:hover:scale-105 lg:hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <div key={t.air} onClick={scrollToToppers} className="bg-white text-[#0F172A] px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-4 w-full lg:hover:scale-105 lg:hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                   <img src={t.img} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#D4AF37] flex-shrink-0" />
                   <div>
                     <p className="font-bold text-base">{t.name}</p>
