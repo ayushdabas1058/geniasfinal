@@ -39,11 +39,20 @@ export default function App() {
 }, [location.pathname]);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    // If this is a password recovery link, don't set the user — let the reset form handle it
+    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    const isRecovery =
+      hash.includes("type=recovery") ||
+      params.get("type") === "recovery";
+
+    if (!isRecovery) {
       setUser(session?.user ?? null);
       if (session?.user) fetchProfile(session.user.id);
-      setAuthLoading(false);
-    });
+    }
+    setAuthLoading(false);
+  });
 
     // line 48
 const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
