@@ -118,8 +118,8 @@ useEffect(() => {
       setError(error.message);
     } else {
       setSuccess("Password updated successfully! You can now sign in with your new password.");
-      // Clear the hash from URL
       window.history.replaceState(null, "", window.location.pathname);
+      await supabase.auth.signOut();
       setTimeout(() => {
         resetForm();
         setStep("login");
