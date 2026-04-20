@@ -60,6 +60,13 @@ const { data: { subscription } } = supabase.auth.onAuthStateChange((event, sessi
     navigate("/auth", { replace: true });
     return;
   }
+  if (event === "SIGNED_IN" && session) {
+    // Only auto-login if this is NOT coming from a recovery link
+    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    const isRecovery = hash.includes("type=recovery") || params.get("type") === "recovery";
+    if (isRecovery) return;
+  }
   setUser(session?.user ?? null);
   if (session?.user) fetchProfile(session.user.id);
   else setProfileName("");
