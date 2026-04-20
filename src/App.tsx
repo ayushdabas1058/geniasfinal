@@ -45,11 +45,16 @@ export default function App() {
       setAuthLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      if (session?.user) fetchProfile(session.user.id);
-      else setProfileName("");
-    });
+    // line 48
+const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "PASSWORD_RECOVERY") {
+    navigate("/auth", { replace: true });
+    return;
+  }
+  setUser(session?.user ?? null);
+  if (session?.user) fetchProfile(session.user.id);
+  else setProfileName("");
+});
 
     return () => subscription.unsubscribe();
   }, []);
