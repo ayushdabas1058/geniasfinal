@@ -38,39 +38,29 @@ export default function App() {
   window.scrollTo({ top: 0, behavior: "instant" });
 }, [location.pathname]);
 
-  useEffect(() => {
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    // If this is a password recovery link, don't set the user — let the reset form handle it
-    const hash = window.location.hash;
-    const params = new URLSearchParams(window.location.search);
-    const isRecovery =
-      hash.includes("type=recovery") ||
-      params.get("type") === "recovery";
-
-    if (!isRecovery) {
+useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY") {
+        // Don't log in — redirect to reset form with a flag
+        navigate("/auth?mode=reset", { replace: true });
+        return;
+      }
       setUser(session?.user ?? null);
       if (session?.user) fetchProfile(session.user.id);
-    }
-    setAuthLoading(false);
-  });
+      else setProfileName("");
+      setAuthLoading(false);
+    });
 
-    // line 48
-const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-  if (event === "PASSWORD_RECOVERY") {
-    navigate("/auth", { replace: true });
-    return;
-  }
-  if (event === "SIGNED_IN" && session) {
-    // Only auto-login if this is NOT coming from a recovery link
-    const hash = window.location.hash;
-    const params = new URLSearchParams(window.location.search);
-    const isRecovery = hash.includes("type=recovery") || params.get("type") === "recovery";
-    if (isRecovery) return;
-  }
-  setUser(session?.user ?? null);
-  if (session?.user) fetchProfile(session.user.id);
-  else setProfileName("");
-});
+    // For normal page loads (no auth event fires), stop the spinner
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      // Only set user if we are NOT on a recovery link
+      const isRecovery = window.location.hash.includes("type=recovery");
+      if (!isRecovery) {
+        setUser(session?.user ?? null);
+        if (session?.user) fetchProfile(session.user.id);
+      }
+      setAuthLoading(false);
+    });
 
     return () => subscription.unsubscribe();
   }, []);
