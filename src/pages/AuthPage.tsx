@@ -20,22 +20,11 @@ export default function AuthPage({ onSuccess }: { onSuccess: () => void }) {
   // Detect password recovery token in URL when user clicks reset link in email
   // line 21
 useEffect(() => {
-  const hash = window.location.hash;
+  // When App.tsx catches PASSWORD_RECOVERY, it redirects here with ?mode=reset
   const params = new URLSearchParams(window.location.search);
-  if (
-    hash.includes("type=recovery") ||
-    hash.includes("access_token") ||
-    params.get("type") === "recovery"
-  ) {
+  if (params.get("mode") === "reset") {
     setStep("reset");
   }
-
-  const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-    if (event === "PASSWORD_RECOVERY") {
-      setStep("reset");
-    }
-  });
-  return () => subscription.unsubscribe();
 }, []);
 
   const resetForm = () => {
