@@ -1,7 +1,30 @@
-import { Clock, CheckCircle, MessageCircle, Video, Radio } from "lucide-react";
+import { Clock, CheckCircle, MessageCircle, Video, Radio, TrendingUp, ExternalLink } from "lucide-react";
 import PageHead from "@/components/PageHead";
 
 const courses = [
+  {
+    title: "First GS Economy Batch by Rohit Sir",
+    badge: "Starting 18th October",
+    duration: "Live + Recorded",
+    faculty: "Rohit Sehrawat | GS Economy",
+    fee: null,
+    availability: null,
+    color: "#F59E0B",
+    liveBatch: true,
+    icon: TrendingUp,
+    poster: "/gs-economy-poster.jpg",
+    registerLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSe6iyi_3O2TVl1F0EM1fpHYUpIWQSnOyMnTf_AFKWEIYomIzQ/viewform?usp=dialog",
+    features: [
+      "Not only for UPSC aspirants — for anyone who truly wants to learn Economics",
+      "Live Online Classes — interactive sessions with Rohit Sir",
+      "Recorded access to every class — learn at your own pace",
+      "PYQ discussion & solutions to understand trends and craft better answers",
+      "4 Prelims practice tests to build speed, accuracy & confidence",
+      "2 Mains tests with evaluation to help you write better and score higher",
+      "Covers Indian Economy, Microeconomics, Macroeconomics, Economic Survey & Current Affairs",
+    ],
+  },
   {
     title: "Economics Optional — Foundation Live 2027",
     badge: "Starting 28th June 2026",
@@ -70,6 +93,14 @@ export default function CoursesPage() {
                   </div>
                 )}
 
+                {course.poster && (
+                  <img
+                    src={course.poster}
+                    alt={course.title}
+                    className="w-full h-auto rounded-xl mb-6 object-cover"
+                  />
+                )}
+
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
                   style={{ backgroundColor: `${course.color}20`, color: course.color }}
@@ -98,10 +129,12 @@ export default function CoursesPage() {
                   <p className="text-gray-400 text-sm">Faculty</p>
                   <p className="text-white font-semibold">{course.faculty}</p>
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 pt-2 border-t border-[#334155]">
-                    <div>
-                      <span className="text-gray-400 text-sm">Course Fee: </span>
-                      <span className="text-[#D4AF37] text-xl font-bold">{course.fee}</span>
-                    </div>
+                    {course.fee && (
+                      <div>
+                        <span className="text-gray-400 text-sm">Course Fee: </span>
+                        <span className="text-[#D4AF37] text-xl font-bold">{course.fee}</span>
+                      </div>
+                    )}
                     {course.availability && (
                       <div>
                         <span className="text-gray-400 text-sm">Availability: </span>
@@ -120,11 +153,27 @@ export default function CoursesPage() {
                   ))}
                 </ul>
 
+                {course.registerLink && (
+                  <a
+                    href={course.registerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-[#D4AF37] text-[#0F172A] py-3.5 rounded-xl font-bold text-sm hover:bg-[#C4A037] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200 mb-3"
+                  >
+                    <ExternalLink size={18} />
+                    Register Now
+                  </a>
+                )}
+
                 <a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-[#D4AF37] text-[#0F172A] py-3.5 rounded-xl font-bold text-sm hover:bg-[#C4A037] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200"
+                  className={
+                    course.registerLink
+                      ? "w-full flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] py-3.5 rounded-xl font-bold text-sm hover:bg-[#D4AF37]/10 transition-all duration-200"
+                      : "w-full flex items-center justify-center gap-2 bg-[#D4AF37] text-[#0F172A] py-3.5 rounded-xl font-bold text-sm hover:bg-[#C4A037] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-200"
+                  }
                 >
                   <MessageCircle size={18} />
                   Enquire Now
